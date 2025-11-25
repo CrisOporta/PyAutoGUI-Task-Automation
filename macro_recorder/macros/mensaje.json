@@ -1,0 +1,121 @@
+{
+  "name": "mensaje",
+  "created": "2025-11-24 23:27:18",
+  "total_actions": 16,
+  "actions": [
+    {
+      "type": "key_press",
+      "wait_before": 0.764,
+      "timestamp": "23:26:52.061",
+      "key": "windows izquierda"
+    },
+    {
+      "type": "key_press",
+      "wait_before": 0.555,
+      "timestamp": "23:26:52.616",
+      "key": "w"
+    },
+    {
+      "type": "key_press",
+      "wait_before": 0.366,
+      "timestamp": "23:26:52.982",
+      "key": "h"
+    },
+    {
+      "type": "key_press",
+      "wait_before": 0.546,
+      "timestamp": "23:26:53.528",
+      "key": "enter"
+    },
+    {
+      "type": "click",
+      "wait_before": 2.639,
+      "timestamp": "23:26:56.167",
+      "x": 3241,
+      "y": 234,
+      "button": "left"
+    },
+    {
+      "type": "click",
+      "wait_before": 0.168,
+      "timestamp": "23:26:56.335",
+      "x": 3241,
+      "y": 234,
+      "button": "left"
+    },
+    {
+      "type": "click",
+      "wait_before": 4.032,
+      "timestamp": "23:27:00.367",
+      "x": 2314,
+      "y": 144,
+      "button": "left"
+    },
+    {
+      "type": "key_press",
+      "wait_before": 0.904,
+      "timestamp": "23:27:01.271",
+      "key": "y"
+    },
+    {
+      "type": "key_press",
+      "wait_before": 0.184,
+      "timestamp": "23:27:01.455",
+      "key": "o"
+    },
+    {
+      "type": "key_press",
+      "wait_before": 0.267,
+      "timestamp": "23:27:01.722",
+      "key": "u"
+    },
+    {
+      "type": "click",
+      "wait_before": 1.165,
+      "timestamp": "23:27:02.887",
+      "x": 2287,
+      "y": 232,
+      "button": "left"
+    },
+    {
+      "type": "click",
+      "wait_before": 2.088,
+      "timestamp": "23:27:04.975",
+      "x": 2495,
+      "y": 1041,
+      "button": "left"
+    },
+    {
+      "type": "click",
+      "wait_before": 0.928,
+      "timestamp": "23:27:05.903",
+      "x": 2537,
+      "y": 794,
+      "button": "left"
+    },
+    {
+      "type": "click",
+      "wait_before": 1.432,
+      "timestamp": "23:27:07.335",
+      "x": 2224,
+      "y": 244,
+      "button": "left"
+    },
+    {
+      "type": "click",
+      "wait_before": 0.176,
+      "timestamp": "23:27:07.511",
+      "x": 2224,
+      "y": 244,
+      "button": "left"
+    },
+    {
+      "type": "click",
+      "wait_before": 2.584,
+      "timestamp": "23:27:10.095",
+      "x": 3091,
+      "y": 1035,
+      "button": "left"
+    }
+  ]
+}

@@ -1,269 +1,179 @@
 # 🤖 Bot de Automatización con PyAutoGUI
 
-Bot completo de automatización para Windows usando PyAutoGUI. Este proyecto incluye múltiples ejemplos y herramientas para automatizar tareas en tu computadora.
+Sistema completo de automatización con grabador de macros para Windows.
 
-## 📋 Contenido
+## 🚀 Inicio Rápido
 
-- **bot_pyautogui.py** - Script principal con menú interactivo completo
-- **ejemplo_simple.py** - Ejemplo básico para comenzar rápidamente
-- **bot_navegador.py** - Automatización de búsquedas web
-- **detector_coordenadas.py** - Herramienta para detectar coordenadas del mouse
-
-## 🚀 Instalación
-
-### 1. Activar el entorno virtual
-
+### 1. Activar entorno virtual
 ```bash
 .\venv\Scripts\activate
 ```
 
-### 2. Instalar dependencias
+### 2. Ejecutar el programa principal
 
+**Grabador de Macros (Recomendado):**
+```bash
+python macro_recorder.py
+```
+
+**Otros bots disponibles:**
+```bash
+python bot_pyautogui.py      # Bot interactivo completo
+python bot_avanzado.py       # Tareas repetitivas
+python macro_simple.py       # Grabador simple
+```
+
+## 📁 Estructura del Proyecto
+
+```
+Bot/
+├── README.md                      Guía principal
+├── ORGANIZACION.md               Explicación de estructura
+│
+├── 🎬 macro_recorder/             ⭐ TODO SOBRE MACROS
+│   ├── README.md                  Guía de macros
+│   ├── macro_recorder.py          Grabador completo
+│   ├── macro_simple.py            Grabador simple
+│   ├── INICIO_RAPIDO_MACROS.md   Inicio rápido
+│   ├── GUIA_MACROS.md            Guía completa
+│   └── macros/                    Macros guardadas
+│
+├── 🤖 bot_pyautogui.py            Bot interactivo principal
+├── 🤖 bot_avanzado.py             Bot con tareas avanzadas
+│
+├── ejemplos/                      Ejemplos y herramientas
+│   ├── README.md                  Guía de ejemplos
+│   ├── ejemplo_simple.py          Ejemplo básico
+│   ├── detector_coordenadas.py
+│   └── bot_navegador.py
+│
+├── docs/                          📚 Documentación
+│   ├── INDEX.md                   Índice completo
+│   ├── README.md                  Doc general
+│   ├── GUIA_RAPIDA.md            Referencia rápida
+│   ├── RESUMEN.md
+│   └── PROBLEMAS_SOLUCIONADOS.md
+│
+└── venv/                          Entorno virtual
+```
+
+## 🎯 ¿Qué Puedo Hacer?
+
+### 🎬 Grabador de Macros (Carpeta macro_recorder/)
+
+**¿Qué hace?** Graba tus clicks y acciones para reproducirlas automáticamente.
+
+```bash
+.\venv\Scripts\activate
+cd macro_recorder
+python macro_recorder.py
+```
+
+1. Graba tus acciones (clicks, teclas, scroll)
+2. Guarda la macro con un nombre
+3. Reproduce cuantas veces quieras
+4. **Todo sobre macros está en la carpeta `macro_recorder/`**
+
+### 🤖 Bots de Automatización
+
+**Bot Interactivo:**
+```bash
+.\venv\Scripts\activate
+python bot_pyautogui.py
+```
+
+**Bot Avanzado:**
+```bash
+.\venv\Scripts\activate
+python bot_avanzado.py
+```
+
+### � Ejemplos
+
+```bash
+# Ejemplo simple de automatización
+.\venv\Scripts\activate
+python ejemplos/ejemplo_simple.py
+
+# Detector de coordenadas del mouse
+python ejemplos/detector_coordenadas.py
+
+# Automatización web
+python ejemplos/bot_navegador.py
+```
+
+## �📖 Documentación
+
+### Macros
+- **[macro_recorder/README.md](macro_recorder/README.md)** - Todo sobre macros
+- **[macro_recorder/INICIO_RAPIDO_MACROS.md](macro_recorder/INICIO_RAPIDO_MACROS.md)** - Inicio rápido
+- **[macro_recorder/GUIA_MACROS.md](macro_recorder/GUIA_MACROS.md)** - Guía completa
+
+### General
+- **[docs/INDEX.md](docs/INDEX.md)** - Índice de documentación
+- **[docs/GUIA_RAPIDA.md](docs/GUIA_RAPIDA.md)** - Referencia de comandos
+- **[docs/README.md](docs/README.md)** - Documentación general
+- **[docs/PROBLEMAS_SOLUCIONADOS.md](docs/PROBLEMAS_SOLUCIONADOS.md)** - Troubleshooting
+
+### Ejemplos
+- **[ejemplos/README.md](ejemplos/README.md)** - Guía de ejemplos
+
+## 💡 Ejemplo Rápido de Uso
+
+**Automatizar un login con macros:**
+
+```bash
+.\venv\Scripts\activate
+cd macro_recorder
+python macro_recorder.py
+2. Opción 1: Grabar
+3. Haz: Click usuario → Escribir → Tab → Escribir password → Enter
+4. Presiona ESC
+5. Guarda como "mi_login"
+6. Carga y reproduce cuando necesites
+
+## 📦 Dependencias
+
+- pyautogui 0.9.54
+- pynput 1.8.1
+- Pillow 12.0.0
+- opencv-python 4.12.0.88
+
+**Instalar:**
 ```bash
 pip install -r requirements.txt
 ```
 
-## 💻 Uso
+## ⚠️ Importante
 
-### Ejecutar el bot principal (recomendado para comenzar)
+- **Activa el entorno virtual antes de ejecutar**: `.\venv\Scripts\activate`
+- **Todo sobre macros está en** `macro_recorder/`
+- **FAILSAFE activado**: Mueve el mouse a la esquina superior izquierda para abortar
+- **Presiona ESC** para detener la grabación de macros
 
-```bash
-python bot_pyautogui.py
-```
+## 🆘 Ayuda
 
-Este script incluye un menú interactivo con todas las funcionalidades:
-- ✅ Información de pantalla
-- ✅ Demo de movimiento del mouse
-- ✅ Demo de clicks
-- ✅ Demo de teclado
-- ✅ Demo de scroll
-- ✅ Capturas de pantalla
-- ✅ Detector de posición del mouse
-- ✅ Tarea automatizada completa
-
-### Ejemplo simple
-
-Para un ejemplo rápido y directo:
-
-```bash
-python ejemplo_simple.py
-```
-
-### Automatización web
-
-Para automatizar búsquedas en el navegador:
-
-```bash
-python bot_navegador.py
-```
-
-### Detector de coordenadas
-
-Para encontrar las coordenadas exactas donde hacer click:
-
-```bash
-python detector_coordenadas.py
-```
-
-## 🛡️ Seguridad
-
-**FAILSAFE activado**: Si mueves el mouse rápidamente a la esquina superior izquierda de la pantalla, el programa se detendrá automáticamente.
-
-## 📚 Funcionalidades Principales
-
-### 1. Movimiento del Mouse
-
-```python
-import pyautogui
-
-# Mover a coordenadas absolutas
-pyautogui.moveTo(100, 100, duration=2)
-
-# Mover relativamente
-pyautogui.move(50, 0)  # 50px a la derecha
-```
-
-### 2. Clicks
-
-```python
-# Click simple
-pyautogui.click()
-
-# Click en coordenadas específicas
-pyautogui.click(x=100, y=200)
-
-# Doble click
-pyautogui.doubleClick()
-
-# Click derecho
-pyautogui.rightClick()
-```
-
-### 3. Teclado
-
-```python
-# Escribir texto
-pyautogui.write('Hola Mundo', interval=0.1)
-
-# Presionar tecla
-pyautogui.press('enter')
-
-# Atajos de teclado
-pyautogui.hotkey('ctrl', 'c')  # Copiar
-pyautogui.hotkey('ctrl', 'v')  # Pegar
-```
-
-### 4. Capturas de Pantalla
-
-```python
-# Captura completa
-screenshot = pyautogui.screenshot()
-screenshot.save('captura.png')
-
-# Captura de región
-region = (0, 0, 300, 400)  # x, y, width, height
-screenshot = pyautogui.screenshot(region=region)
-```
-
-### 5. Obtener Información
-
-```python
-# Tamaño de pantalla
-width, height = pyautogui.size()
-
-# Posición del mouse
-x, y = pyautogui.position()
-
-# Color del pixel
-color = pyautogui.pixel(x, y)  # Retorna RGB
-```
-
-### 6. Scroll
-
-```python
-# Scroll hacia abajo
-pyautogui.scroll(-3)
-
-# Scroll hacia arriba
-pyautogui.scroll(3)
-```
-
-## 🎯 Ejemplos de Uso Real
-
-### Ejemplo 1: Abrir una aplicación y escribir
-
-```python
-import pyautogui
-import time
-
-# Abrir menú inicio
-pyautogui.press('win')
-time.sleep(1)
-
-# Buscar aplicación
-pyautogui.write('notepad')
-time.sleep(1)
-
-# Abrir
-pyautogui.press('enter')
-time.sleep(2)
-
-# Escribir
-pyautogui.write('Mensaje automatizado!')
-```
-
-### Ejemplo 2: Automatizar formulario web
-
-```python
-import pyautogui
-import time
-
-# Hacer click en campo nombre
-pyautogui.click(500, 300)
-pyautogui.write('Juan Perez')
-
-# Tab al siguiente campo
-pyautogui.press('tab')
-
-# Escribir email
-pyautogui.write('juan@ejemplo.com')
-
-# Enviar formulario
-pyautogui.press('enter')
-```
-
-### Ejemplo 3: Tomar captura y buscar elemento
-
-```python
-import pyautogui
-
-# Buscar un botón por imagen
-button_location = pyautogui.locateOnScreen('boton.png')
-
-if button_location:
-    # Hacer click en el centro del botón
-    button_center = pyautogui.center(button_location)
-    pyautogui.click(button_center)
-else:
-    print("Botón no encontrado")
-```
-
-## ⚙️ Configuración Útil
-
-```python
-import pyautogui
-
-# Pausa automática entre comandos (segundos)
-pyautogui.PAUSE = 1
-
-# Activar failsafe (mover mouse a esquina para abortar)
-pyautogui.FAILSAFE = True
-
-# Duración de movimientos
-pyautogui.DURATION = 0.5
-```
-
-## 🔧 Solución de Problemas
-
-### Error: "pyautogui.FailSafeException"
-- Moviste el mouse a la esquina superior izquierda (esto es intencional como medida de seguridad)
-- Para desactivar: `pyautogui.FAILSAFE = False` (no recomendado)
-
-### El bot escribe demasiado rápido
-- Ajusta el parámetro `interval` en `pyautogui.write()`:
-  ```python
-  pyautogui.write('texto', interval=0.1)  # 0.1 segundos entre teclas
-  ```
-
-### Las coordenadas no son precisas
-- Usa el `detector_coordenadas.py` para obtener coordenadas exactas
-- Ten en cuenta que las coordenadas pueden cambiar si cambias la resolución de pantalla
-
-## 📖 Recursos Adicionales
-
-- [Documentación oficial de PyAutoGUI](https://pyautogui.readthedocs.io/)
-- [Cheat Sheet de PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/quickstart.html)
-
-## ⚠️ Advertencias
-
-1. **Usa con responsabilidad**: Este bot puede controlar tu computadora
-2. **Guarda tu trabajo**: Antes de ejecutar automatizaciones complejas
-3. **Prueba primero**: Usa los ejemplos simples antes de crear automatizaciones complejas
-4. **Tiempos de espera**: Ajusta los `time.sleep()` según la velocidad de tu computadora
-
-## 🎓 Tips y Mejores Prácticas
-
-1. **Siempre usa FAILSAFE** en desarrollo
-2. **Añade pausas** entre acciones importantes
-3. **Usa coordenadas relativas** cuando sea posible
-4. **Documenta tus coordenadas** en comentarios
-5. **Prueba en ventanas pequeñas** primero
-6. **Captura screenshots** para debugging
-
-## 📝 Licencia
-
-Este proyecto es de uso libre para aprendizaje y automatización personal.
+Si tienes problemas, consulta: [docs/PROBLEMAS_SOLUCIONADOS.md](docs/PROBLEMAS_SOLUCIONADOS.md)
 
 ---
 
-**¡Disfruta automatizando! 🚀**
+**¡Comienza a automatizar!** 🚀
+
+### Macros:
+```bash
+.\venv\Scripts\activate
+cd macro_recorder
+python macro_recorder.py
+```
+
+### Bots:
+```bash
+.\venv\Scripts\activate
+python bot_pyautogui.py
+```
+
+### Ejemplos:
+```bash
+.\venv\Scripts\activate
+python ejemplos/ejemplo_simple.py
+```
