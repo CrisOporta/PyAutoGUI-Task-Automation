@@ -1,0 +1,25 @@
+# Crear el entorno virutal
+python -m venv venv
+
+# Activar en entorno virutal
+# En Windows:
+.\venv\Scripts\activate
+
+# En macOS/Linux:
+source venv/bin/activate
+
+# Instalar dependencias
+pip install <nombre_paquete>
+
+# Desinstalar dependencias 
+pip uninstall <nombre_paquete>
+
+# Generar el archivo requirements.txt
+pip freeze > requirements.txt
+
+# Instalar las dependencias de requirements.txt
+pip install -r requirements.txt
+
+
+# Instalar PyAutoGUI
+pip install pyautogui
