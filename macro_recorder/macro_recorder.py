@@ -56,6 +56,23 @@ class MacroRecorder:
         
         wait_time = self._get_elapsed_time()
         
+        # Detección de Doble Click
+        if action_type == 'click' and self.actions:
+            last_action = self.actions[-1]
+            # Si el último fue click, es el mismo botón, y pasó poco tiempo (<0.5s)
+            if (last_action['type'] == 'click' and 
+                last_action['button'] == kwargs.get('button') and
+                wait_time < 0.5):
+                
+                # Verificar distancia (pequeña tolerancia de movimiento de 5px)
+                dist = ((last_action['x'] - kwargs['x'])**2 + (last_action['y'] - kwargs['y'])**2)**0.5
+                if dist < 5:
+                    # ¡Es un doble click!
+                    # Convertimos la acción anterior en doble click
+                    last_action['type'] = 'double_click'
+                    print(f"  └── ⚡ Convertido a DOBLE CLICK")
+                    return
+
         action = {
             'type': action_type,
             'wait_before': wait_time,
@@ -72,6 +89,8 @@ class MacroRecorder:
         
         if action['type'] == 'click':
             action_str += f"CLICK {action['button']} en ({action['x']}, {action['y']})"
+        elif action['type'] == 'double_click':
+            action_str += f"DOBLE CLICK {action['button']} en ({action['x']}, {action['y']})"
         elif action['type'] == 'scroll':
             direction = "ARRIBA" if action['dy'] > 0 else "ABAJO"
             action_str += f"SCROLL {direction} ({abs(action['dy'])} unidades)"
@@ -232,6 +251,9 @@ class MacroRecorder:
             print("❌ No hay acciones para guardar")
             return False
         
+        # Asegurar que la carpeta existe
+        self._create_macros_folder()
+        
         filename = os.path.join(self.macros_folder, f"{name}.json")
         
         macro_data = {
@@ -346,6 +368,11 @@ class MacroRecorder:
                             pyautogui.rightClick(action['x'], action['y'])
                         elif action['button'] == 'middle':
                             pyautogui.middleClick(action['x'], action['y'])
+                    
+                    elif action_type == 'double_click':
+                        print(f"[{i}/{len(self.actions)}] Doble Click {action['button']} en ({action['x']}, {action['y']})")
+                        # Usar click con clicks=2 para mayor compatibilidad
+                        pyautogui.click(action['x'], action['y'], clicks=2, interval=0.1, button=action['button'])
                     
                     elif action_type == 'scroll':
                         print(f"[{i}/{len(self.actions)}] Scroll")

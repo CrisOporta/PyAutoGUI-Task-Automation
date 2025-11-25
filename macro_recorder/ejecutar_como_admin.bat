@@ -1,8 +1,9 @@
 @echo off
-REM Script para ejecutar macro_recorder_v2 como Administrador
+REM Script para ejecutar macro_recorder como Administrador
+REM Esto es necesario para interactuar con apps de Microsoft Store (WhatsApp, etc.)
 
 echo ========================================
-echo   MACRO RECORDER V2 - CON TECLA WIN
+echo   MACRO RECORDER - MODO ADMINISTRADOR
 echo ========================================
 echo.
 
@@ -10,23 +11,21 @@ REM Verificar si ya es administrador
 net session >nul 2>&1
 if %errorLevel% == 0 (
     echo ✅ Ejecutando como Administrador
+    echo    Ahora podras interactuar con WhatsApp y apps protegidas.
     echo.
     
     REM Activar entorno virtual
     echo Activando entorno virtual...
     call ..\venv\Scripts\activate.bat
     
-    REM Ejecutar V2
-    echo Ejecutando Macro Recorder V2...
+    REM Ejecutar el grabador unificado
+    echo Ejecutando Macro Recorder...
     echo.
-    python macro_recorder_v2.py
+    python macro_recorder.py
     
     pause
 ) else (
-    echo ⚠️  Este script necesita permisos de Administrador
-    echo     para capturar la tecla Windows
-    echo.
-    echo Relanzando con permisos...
+    echo ⚠️  Solicitando permisos de Administrador...
     echo.
     
     REM Relanzar como administrador
